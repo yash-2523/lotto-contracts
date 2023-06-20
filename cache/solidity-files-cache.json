@@ -1,0 +1,596 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/home/yash/Documents/lotto-new-arch/contracts/LottoGame.sol": {
+      "lastModificationDate": 1687009457662,
+      "contentHash": "e07558136f26a505561a0454982d5d2b",
+      "sourceName": "contracts/LottoGame.sol",
+      "solcConfig": {
+        "version": "0.8.16",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol",
+        "./interfaces/IVault.sol",
+        "./interfaces/IRNG.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.16"
+      ],
+      "artifacts": [
+        "LottoGame"
+      ]
+    },
+    "/home/yash/Documents/lotto-new-arch/contracts/interfaces/IVault.sol": {
+      "lastModificationDate": 1686755578663,
+      "contentHash": "f76cc19b9220fec61f6ad67808cc0bd9",
+      "sourceName": "contracts/interfaces/IVault.sol",
+      "solcConfig": {
+        "version": "0.8.16",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.7.0 <0.9.0"
+      ],
+      "artifacts": [
+        "IVault"
+      ]
+    },
+    "/home/yash/Documents/lotto-new-arch/contracts/interfaces/IRNG.sol": {
+      "lastModificationDate": 1686755472576,
+      "contentHash": "7bc2292b9c2e4fb54329aa896ed20514",
+      "sourceName": "contracts/interfaces/IRNG.sol",
+      "solcConfig": {
+        "version": "0.8.16",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.7.0 <0.9.0"
+      ],
+      "artifacts": [
+        "IRNG"
+      ]
+    },
+    "/home/yash/Documents/lotto-new-arch/node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+      "lastModificationDate": 1684726761024,
+      "contentHash": "ad7c2d0af148c8f9f097d65deeb4da6b",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+      "solcConfig": {
+        "version": "0.8.16",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "/home/yash/Documents/lotto-new-arch/node_modules/@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol": {
+      "lastModificationDate": 1684726761072,
+      "contentHash": "0320a90f714843ca19373ed143fc4466",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol",
+      "solcConfig": {
+        "version": "0.8.16",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC20.sol",
+        "../extensions/draft-IERC20Permit.sol",
+        "../../../utils/Address.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "SafeERC20"
+      ]
+    },
+    "/home/yash/Documents/lotto-new-arch/node_modules/@openzeppelin/contracts/utils/Address.sol": {
+      "lastModificationDate": 1684726760836,
+      "contentHash": "f31ad6fc4bbf9c06203987220156a6ba",
+      "sourceName": "@openzeppelin/contracts/utils/Address.sol",
+      "solcConfig": {
+        "version": "0.8.16",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.1"
+      ],
+      "artifacts": [
+        "Address"
+      ]
+    },
+    "/home/yash/Documents/lotto-new-arch/node_modules/@openzeppelin/contracts/token/ERC20/extensions/draft-IERC20Permit.sol": {
+      "lastModificationDate": 1684726760872,
+      "contentHash": "fb77f144244b9ab12533aa6ce85ef8c5",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/draft-IERC20Permit.sol",
+      "solcConfig": {
+        "version": "0.8.16",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20Permit"
+      ]
+    },
+    "/home/yash/Documents/lotto-new-arch/contracts/Vault.sol": {
+      "lastModificationDate": 1686756084312,
+      "contentHash": "21241311fb6cf68002673fa54c6966f8",
+      "sourceName": "contracts/Vault.sol",
+      "solcConfig": {
+        "version": "0.8.16",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol",
+        "./interfaces/IRNG.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.16"
+      ],
+      "artifacts": [
+        "Vault"
+      ]
+    },
+    "/home/yash/Documents/lotto-new-arch/contracts/RNG.sol": {
+      "lastModificationDate": 1686755802656,
+      "contentHash": "b00bb690167bab9d34f5254b2021c978",
+      "sourceName": "contracts/RNG.sol",
+      "solcConfig": {
+        "version": "0.8.16",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./interfaces/ILottoGame.sol",
+        "./interfaces/IVault.sol",
+        "@api3/airnode-protocol/contracts/rrp/requesters/RrpRequesterV0.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.16"
+      ],
+      "artifacts": [
+        "RNG"
+      ]
+    },
+    "/home/yash/Documents/lotto-new-arch/contracts/interfaces/ILottoGame.sol": {
+      "lastModificationDate": 1686755476984,
+      "contentHash": "a0b29e2a206798bb50cda01c5c7c97fe",
+      "sourceName": "contracts/interfaces/ILottoGame.sol",
+      "solcConfig": {
+        "version": "0.8.16",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.7.0 <0.9.0"
+      ],
+      "artifacts": [
+        "ILottoGame"
+      ]
+    },
+    "/home/yash/Documents/lotto-new-arch/node_modules/@api3/airnode-protocol/contracts/rrp/requesters/RrpRequesterV0.sol": {
+      "lastModificationDate": 1684739463244,
+      "contentHash": "73496fe3ea176c4f71c00e5372c10a75",
+      "sourceName": "@api3/airnode-protocol/contracts/rrp/requesters/RrpRequesterV0.sol",
+      "solcConfig": {
+        "version": "0.8.16",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IAirnodeRrpV0.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "RrpRequesterV0"
+      ]
+    },
+    "/home/yash/Documents/lotto-new-arch/node_modules/@api3/airnode-protocol/contracts/rrp/interfaces/IAirnodeRrpV0.sol": {
+      "lastModificationDate": 1684739463236,
+      "contentHash": "956233427805a2b9c588d50344326194",
+      "sourceName": "@api3/airnode-protocol/contracts/rrp/interfaces/IAirnodeRrpV0.sol",
+      "solcConfig": {
+        "version": "0.8.16",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IAuthorizationUtilsV0.sol",
+        "./ITemplateUtilsV0.sol",
+        "./IWithdrawalUtilsV0.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IAirnodeRrpV0"
+      ]
+    },
+    "/home/yash/Documents/lotto-new-arch/node_modules/@api3/airnode-protocol/contracts/rrp/interfaces/IAuthorizationUtilsV0.sol": {
+      "lastModificationDate": 1684739463236,
+      "contentHash": "3db936311aea24d821820e27f83aa69e",
+      "sourceName": "@api3/airnode-protocol/contracts/rrp/interfaces/IAuthorizationUtilsV0.sol",
+      "solcConfig": {
+        "version": "0.8.16",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IAuthorizationUtilsV0"
+      ]
+    },
+    "/home/yash/Documents/lotto-new-arch/node_modules/@api3/airnode-protocol/contracts/rrp/interfaces/ITemplateUtilsV0.sol": {
+      "lastModificationDate": 1684739463240,
+      "contentHash": "098a8d98d08bc79a054b61e12e8983f9",
+      "sourceName": "@api3/airnode-protocol/contracts/rrp/interfaces/ITemplateUtilsV0.sol",
+      "solcConfig": {
+        "version": "0.8.16",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ITemplateUtilsV0"
+      ]
+    },
+    "/home/yash/Documents/lotto-new-arch/node_modules/@api3/airnode-protocol/contracts/rrp/interfaces/IWithdrawalUtilsV0.sol": {
+      "lastModificationDate": 1684739463240,
+      "contentHash": "40b54b05ad57a662ff48f677c0dc413d",
+      "sourceName": "@api3/airnode-protocol/contracts/rrp/interfaces/IWithdrawalUtilsV0.sol",
+      "solcConfig": {
+        "version": "0.8.16",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IWithdrawalUtilsV0"
+      ]
+    },
+    "/home/yash/Documents/lotto-new-arch/contracts/MyStableToken.sol": {
+      "lastModificationDate": 1684726750111,
+      "contentHash": "93eda0dcd2a512e9b9913d211aa1da72",
+      "sourceName": "contracts/MyStableToken.sol",
+      "solcConfig": {
+        "version": "0.8.16",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0",
+        "^0.8.0",
+        ">=0.8.9"
+      ],
+      "artifacts": [
+        "Context",
+        "ERC20",
+        "IERC20",
+        "IERC20Metadata",
+        "MYStableToken"
+      ]
+    }
+  }
+}
