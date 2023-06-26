@@ -48,7 +48,7 @@ contract LottoGame {
     mapping(uint256 => mapping(address => uint256)) public numberOfTicketsOfUser;
     mapping(address => uint256[]) public userParticipatedGames;
     mapping(address => uint256) public userGeneratedRewardForReferrer;
-    mapping(address => uint256) userPoints;
+    mapping(address => uint256) public userPoints;
     bytes32 public hashedMessage = 0x98c182dcef4c6b953bbd06b92baf2f3e237ce3a883546fdd933dadd12051d56b;
     address[][] public gameMembers;
     uint256[][] public winners;
@@ -102,6 +102,14 @@ contract LottoGame {
         SafeERC20.safeTransferFrom(stableCoin, msg.sender, address(vault), ticketPrice);
         if(!IVault(vault).hasUsername(msg.sender)){
             IVault(vault).setUsername(msg.sender, _username);
+        }
+
+        if(game.membersFilled == 0){
+            if(game.id != 0){
+                if(games[games.length - 2].status == Status.Open){
+                    IRNG(payable(RNGManager)).backupRNG(game.id - 1, address(this), 0);
+                }
+            }
         }
 
         userPoints[msg.sender] += points;
@@ -223,29 +231,31 @@ contract LottoGame {
         uint256[] memory _randomWords
     ) public {
         require(msg.sender == RNGManager, "Only RNG Manager can declare results");
-        games[gameId].status = Status.Closed;
-        (uint256 winner1, uint256 winner2, uint256 winner3) = (_randomWords[0] % poolCapacity, _randomWords[1] % poolCapacity, _randomWords[2] % poolCapacity);
-        if(winner1 == winner2){
-            winner2 = (winner2 + 1) % poolCapacity;
-        }
-        if(winner1 == winner3){
-            winner3 = (winner3 + 1) % poolCapacity;
-        }
-        if(winner2 == winner3){
-            winner3 = (winner3 + 1) % poolCapacity;
-        }
-        if(winner1 == winner3){
-            winner3 = (winner3 + 1) % poolCapacity;
-        }
-        winners[gameId][0] = winner1;
-        winners[gameId][1] = winner2;
-        winners[gameId][2] = winner3;
-        userGeneratedRewardForReferrer[gameMembers[gameId][winner1]] += winningAmounts[0] / 10;
-        userGeneratedRewardForReferrer[gameMembers[gameId][winner2]] += winningAmounts[1] / 10;
-        userGeneratedRewardForReferrer[gameMembers[gameId][winner3]] += winningAmounts[2] / 10;
-        vault.distributePoolPrize(gameMembers[gameId][winner1], gameMembers[gameId][winner2], gameMembers[gameId][winner3], winningAmounts, jackpot);
+        if(games[gameId].status != Status.Closed){
+            games[gameId].status = Status.Closed;
+            (uint256 winner1, uint256 winner2, uint256 winner3) = (_randomWords[0] % poolCapacity, _randomWords[1] % poolCapacity, _randomWords[2] % poolCapacity);
+            if(winner1 == winner2){
+                winner2 = (winner2 + 1) % poolCapacity;
+            }
+            if(winner1 == winner3){
+                winner3 = (winner3 + 1) % poolCapacity;
+            }
+            if(winner2 == winner3){
+                winner3 = (winner3 + 1) % poolCapacity;
+            }
+            if(winner1 == winner3){
+                winner3 = (winner3 + 1) % poolCapacity;
+            }
+            winners[gameId][0] = winner1;
+            winners[gameId][1] = winner2;
+            winners[gameId][2] = winner3;
+            // userGeneratedRewardForReferrer[gameMembers[gameId][winner1]] += winningAmounts[0] / 10;
+            // userGeneratedRewardForReferrer[gameMembers[gameId][winner2]] += winningAmounts[1] / 10;
+            // userGeneratedRewardForReferrer[gameMembers[gameId][winner3]] += winningAmounts[2] / 10;
+            vault.distributePoolPrize(gameMembers[gameId][winner1], gameMembers[gameId][winner2], gameMembers[gameId][winner3], winningAmounts, jackpot);
 
-        emit WinnerAnnounced(gameMembers[gameId][winner1], gameMembers[gameId][winner2], gameMembers[gameId][winner3], gameId, winningAmounts);
+            emit WinnerAnnounced(gameMembers[gameId][winner1], gameMembers[gameId][winner2], gameMembers[gameId][winner3], gameId, winningAmounts);
+        }
     }
 
     function getMyTicketIds(address _user, uint256 _gameId) public view returns(uint256[] memory) {

@@ -28,6 +28,13 @@ interface IRNG {
         uint8 gameType
     ) external;
 
+    
+    function backupRNG(
+        uint256 gameId,
+        address gameContract,
+        uint8 gameType
+    ) external;
+
     function setGasPrice(uint256 _gasPrice) external;
 
     function setSponsorWallet(address _sponsorWallet) external;

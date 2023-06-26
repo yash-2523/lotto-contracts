@@ -27,7 +27,7 @@ async function main() {
   // stablecoin - optimism_testnet - 0xe45360bE929AA0d4E21F205b9ad3f645Eb932C7b
 
   const VAULT = await hre.ethers.getContractFactory("Vault");
-  const vault = await VAULT.attach("0xdc516aAEF57ec9e36c61310F57184f70730ce701")
+  const vault = await VAULT.attach("0x96B8aC7243bf0bfFC58Edc886C01b99C0eFd1498")
   // const vault = await VAULT.deploy(
   //   "0x256bf0a23ee0f37a647e9a56b83d7496c72c2d2c",
   //   ["0xf3636704cB8f042a0De759a307060058b2593570", "0xdCdFae782d8429A75C345ac4C920e8dc605afD80"],
@@ -44,7 +44,8 @@ async function main() {
   const lottoGame = await LOTTOGAME.deploy(
     "0x256bf0a23ee0f37a647e9a56b83d7496c72c2d2c",
     "10000000",
-    vault.address
+    vault.address,
+    "1"
   );
 
   await lottoGame.deployed();
@@ -52,7 +53,7 @@ async function main() {
   console.log("LottoGame deployed to:", lottoGame.address);
 
   const RNG = await hre.ethers.getContractFactory("RNG");
-  const rng = await RNG.attach("0xd2BA99991ab50E03A1532cC583c7ABA9Bd1B1aab");
+  const rng = await RNG.attach("0x5785494d3f0Df561e59D1b5247EAFB04B879c177");
   // const rng = await RNG.deploy(
   //   // "4028",
   //   // "0x7a1bac17ccc5b313516c5e16fb24f7659aa5ebed",
@@ -84,6 +85,11 @@ async function main() {
   // await tx3.wait();
 }
 
+
+// npx @api3/airnode-admin derive-sponsor-wallet-address \
+//   --airnode-xpub xpub6CuDdF9zdWTRuGybJPuZUGnU4suZowMmgu15bjFZT2o6PUtk4Lo78KGJUGBobz3pPKRaN9sLxzj21CMe6StP3zUsd8tWEJPgZBesYBMY7Wo \
+//   --airnode-address 0x6238772544f029ecaBfDED4300f13A3c4FE84E1D \
+//   --sponsor-address <Use the address of your Deployed Lottery Contract>
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
 main().catch((error) => {

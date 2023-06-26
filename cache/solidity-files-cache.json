@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/home/yash/Documents/lotto-new-arch/contracts/LottoGame.sol": {
-      "lastModificationDate": 1687009457662,
-      "contentHash": "e07558136f26a505561a0454982d5d2b",
+      "lastModificationDate": 1687768909331,
+      "contentHash": "9c82390ba499987f3aa67df1ed856675",
       "sourceName": "contracts/LottoGame.sol",
       "solcConfig": {
         "version": "0.8.16",
@@ -32,7 +32,8 @@
         "@openzeppelin/contracts/token/ERC20/IERC20.sol",
         "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol",
         "./interfaces/IVault.sol",
-        "./interfaces/IRNG.sol"
+        "./interfaces/IRNG.sol",
+        "./interfaces/IEventContract.sol"
       ],
       "versionPragmas": [
         "^0.8.16"
@@ -77,8 +78,8 @@
       ]
     },
     "/home/yash/Documents/lotto-new-arch/contracts/interfaces/IRNG.sol": {
-      "lastModificationDate": 1686755472576,
-      "contentHash": "7bc2292b9c2e4fb54329aa896ed20514",
+      "lastModificationDate": 1687432178060,
+      "contentHash": "ce87fcd1a94432678b9489c2b9a8231a",
       "sourceName": "contracts/interfaces/IRNG.sol",
       "solcConfig": {
         "version": "0.8.16",
@@ -295,8 +296,8 @@
       ]
     },
     "/home/yash/Documents/lotto-new-arch/contracts/RNG.sol": {
-      "lastModificationDate": 1686755802656,
-      "contentHash": "b00bb690167bab9d34f5254b2021c978",
+      "lastModificationDate": 1687431775277,
+      "contentHash": "17d95467a218ad6b311a02fe6eec5bd0",
       "sourceName": "contracts/RNG.sol",
       "solcConfig": {
         "version": "0.8.16",
@@ -590,6 +591,41 @@
         "IERC20",
         "IERC20Metadata",
         "MYStableToken"
+      ]
+    },
+    "/home/yash/Documents/lotto-new-arch/contracts/interfaces/IEventContract.sol": {
+      "lastModificationDate": 1687249658897,
+      "contentHash": "2f4752bf5d0e95a21ed1f9a236291988",
+      "sourceName": "contracts/interfaces/IEventContract.sol",
+      "solcConfig": {
+        "version": "0.8.16",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.7.0 <0.9.0"
+      ],
+      "artifacts": [
+        "IEventContract"
       ]
     }
   }

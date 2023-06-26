@@ -162,6 +162,34 @@ contract RNG is RrpRequesterV0 {
         });
     }
 
+    function backupRNG(
+        uint256 gameId,
+        address gameContract,
+        GameType gameType
+    ) external {
+        require(isWhitelisted[msg.sender], "RNG: Not whitelisted");
+        uint256 randomBlock = uint256(keccak256(abi.encodePacked(block.timestamp, block.difficulty, gameId, gameContract, gameType))) % block.number;
+        uint256[] memory _randomWords = new uint256[](gameType == GameType.Lotto ? 3 : 1);
+        uint256[] memory blocks = new uint256[](3);
+        blocks[0] = randomBlock;
+        blocks[1] = randomBlock + 1;
+        blocks[2] = randomBlock + 2;
+        if(blocks[0] == block.number-1) {
+            blocks[1] = blocks[0] - 1;
+        }
+        if(blocks[0] >= block.number-2) {
+            blocks[2] = block.number - 3;
+        }
+        for (uint256 i = 0; i < _randomWords.length; i++) {
+            _randomWords[i] = uint256(keccak256(abi.encodePacked(blockhash(blocks[i]), i))) % (10**30);
+        }
+        if (gameType == GameType.Lotto) {
+            ILottoGame(gameContract).declareResults(gameId, _randomWords);
+        } else {
+            IVault(payable(gameContract)).decalreReferralWinners(gameId, _randomWords);
+        }
+    }
+
     function fulfillRandomWords(
         bytes32 _requestId,
         bytes calldata _data

@@ -13,9 +13,9 @@ async function main() {
 // avax - 0x22aA0c8b8dc73f0F28B29F234C847031988555c2  
 
   const RNG = await hre.ethers.getContractFactory("RNG");
-  const rng = await RNG.attach("0xd2BA99991ab50E03A1532cC583c7ABA9Bd1B1aab");
+  const rng = await RNG.attach("0x5785494d3f0Df561e59D1b5247EAFB04B879c177");
 
-  let tx = await rng.setSponsorWallet("0xA13c2AB6FFc23baecbB0A0f8cdDb5CC633D4953d");
+  let tx = await rng.setSponsorWallet("0x41e350292d09CDB752A75202fEcAA390fC24bd56");
   await tx.wait();
 
   // const LOTTOGAME = await hre.ethers.getContractFactory("LottoGame");
